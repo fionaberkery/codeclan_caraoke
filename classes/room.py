@@ -9,7 +9,10 @@ class Room:
         return len(self.who_is_in_the_room)
     
     def check_in_guest(self, guest):
-        self.who_is_in_the_room.append(guest)
+        if len(self.who_is_in_the_room) >= self.max_capacity:
+            return "Sorry no more room"
+        else:
+            self.who_is_in_the_room.append(guest)
         
     def check_out_guest(self, guest):
         self.who_is_in_the_room.remove(guest)
