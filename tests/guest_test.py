@@ -1,6 +1,7 @@
 import unittest
 
 from classes.guest import Guest 
+from classes.room import Room
 
 class TestGuest(unittest.TestCase):
 
