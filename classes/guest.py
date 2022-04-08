@@ -1,9 +1,5 @@
-from unittest.mock import _NameArgsKwargs
-
-
-class Customer:
+class Guest:
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
-        
