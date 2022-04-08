@@ -7,7 +7,8 @@ class Room:
     def guest_list_count(self):
         return len(self.who_is_in_the_room)
     
-    def add_guest(self, guest_to_add):
-        self.who_is_in_the_room.append(guest_to_add)
+    def check_in_guest(self, guest):
+        self.who_is_in_the_room.append(guest)
         
-    
+    def check_out_guest(self, guest):
+        self.who_is_in_the_room.remove(guest)
