@@ -1,29 +1,29 @@
 class Room:
-    def __init__(self, room_number, max_capacity, entry_fee):
-        self.room_number = room_number
+    def __init__(self, name, max_capacity, entry_fee):
+        self.name = name
         self.max_capacity = max_capacity
         self.entry_fee = entry_fee
-        self.who_is_in_the_room = []
+        self.guests_in_room = []
         self.songs_to_sing= []
         self.queue = []
 
-    def guest_list_count(self):
-        return len(self.who_is_in_the_room)
+    def how_many_guests(self):
+        return len(self.guests_in_room)
     
     def check_in_guest(self, guest):
-        if len(self.who_is_in_the_room) >= self.max_capacity:
+        if len(self.guests_in_room) >= self.max_capacity:
             self.queue.append(guest)
         else:
-            self.who_is_in_the_room.append(guest)
+            self.guests_in_room.append(guest)
         
     def check_out_guest(self, guest):
-        self.who_is_in_the_room.remove(guest)
+        self.guests_in_room.remove(guest)
 
-    def song_list_count(self):
+    def how_many_songs(self):
         return len(self.songs_to_sing)
 
     def add_song(self, song):
         self.songs_to_sing.append(song)
 
-    def how_many_in_the_queue(self):
+    def queue_length(self):
         return len(self.queue)
