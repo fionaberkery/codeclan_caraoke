@@ -29,12 +29,12 @@ class TestRoom(unittest.TestCase):
         self.song7 = Song("Horses", "Daryl Braithwaite")
         self.song8 = Song("Ashes", "Embrace")
         self.song9 = Song("Sweet Caroline", "Neil Diamond")
-        self.song10 = Song("Wonderwall", "Oasis")
+        self.song10 = Song("Two Of Us", "The Beatles")
         self.song11 = Song("Teenage Dirtbag", "Wheatus")
         self.song12 = Song("I Will Wait", "Mumford & Sons")
         self.song13 = Song("I'd Do Anything For Love", "Meatloaf")
         self.song14 = Song("I Drove All Night", "Celine Dion")
-        self.song15 = Song("If I Could Turn Back Time", "Cher")
+        self.song15 = Song("Everlasting Love", "Love Affair")
 
 
     def test_room_has_name(self):
@@ -76,3 +76,13 @@ class TestRoom(unittest.TestCase):
 
     def test_rooms_entry_fee_amount(self):
         self.assertEqual(6, self.room2.entry_fee)
+
+    def test_till_amount_can_increase(self):
+        self.assertEqual(3, self.room1.add_money(self.room1.entry_fee))
+
+    def test_guest_checks_in(self):
+        self.guest1.check_wallet(self.room1.entry_fee)
+        self.guest1.remove_money_from_wallet(self.room1.entry_fee)
+        self.room1.add_money(self.room1.entry_fee)
+        self.room1.check_in_guest(self.guest1)
+        self.assertEqual(1, self.room1.how_many_guests())

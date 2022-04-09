@@ -6,6 +6,7 @@ class Room:
         self.guests_in_room = []
         self.songs_to_sing= []
         self.queue = []
+        self.cash = 0
 
     def how_many_guests(self):
         return len(self.guests_in_room)
@@ -27,3 +28,7 @@ class Room:
 
     def queue_length(self):
         return len(self.queue)
+
+    def add_money(self, amount):
+        self.cash += amount 
+        return self.cash
