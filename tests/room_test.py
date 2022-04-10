@@ -8,7 +8,7 @@ class TestRoom(unittest.TestCase):
 
     def setUp(self):
         self.room1 = Room("Neon Nights", 4, 3)
-        self.room2 = Room("Glitter Ball Dreams", 8, 6)
+        self.room2 = Room("Glitter Ball", 8, 6)
         self.room3 = Room("Space Cave", 10, 8)
         self.guest1 = Guest("Fiona", 50)
         self.guest2 = Guest("Debbie", 60)
